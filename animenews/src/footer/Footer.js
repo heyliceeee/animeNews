@@ -15,44 +15,28 @@ const { Title, Link } = Typography;
 function Footer() {
   return (
     <Row>
-      <Col
-        className="gutter-row"
-        span={6}
-        style={{ border: "2px solid #1890ff", borderRadius: "4px" }}
-      >
+      <Col className="gutter-row" span={6}>
         <Divider />
         <Title level={4}>Navigation</Title>
         <Link href="https://ant.design" target="_blank">
           Ant Design (Link)
         </Link>
       </Col>
-      <Col
-        className="gutter-row"
-        span={6}
-        style={{ border: "2px solid #1890ff", borderRadius: "4px" }}
-      >
+      <Col className="gutter-row" span={6}>
         <Divider />
         <Title level={4}>Connect With Us</Title>
         <Link href="https://ant.design" target="_blank">
           Ant Design (Link)
         </Link>
       </Col>
-      <Col
-        className="gutter-row"
-        span={6}
-        style={{ border: "2px solid #1890ff", borderRadius: "4px" }}
-      >
+      <Col className="gutter-row" span={6}>
         <Divider />
         <Title level={4}>Anime News</Title>
         <Link href="https://ant.design" target="_blank">
           Ant Design (Link)
         </Link>
       </Col>
-      <Col
-        className="gutter-row"
-        span={6}
-        style={{ border: "2px solid #1890ff", borderRadius: "4px" }}
-      >
+      <Col className="gutter-row" span={6}>
         <Divider />
         <Title level={4}>Account</Title>
         <Link href="https://ant.design" target="_blank">
