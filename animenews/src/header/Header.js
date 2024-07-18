@@ -42,15 +42,15 @@ function Header() {
   return (
 
     <Row>
-      <Col className="gutter-row logo-column" xs={0} sm={0} md={0} lg={0} xl={2} style={{ border: "2px solid #1890ff", borderRadius: "4px", display: 'flex', justifyContent: 'left', alignItems: 'left', height: "60px"}}>
+      <Col className="gutter-row logo-column" xs={0} sm={0} md={0} lg={0} xl={2} style={{ display: 'flex', justifyContent: 'left', alignItems: 'left', height: "60px"}}>
         <Image src={logo} height="99%"/>
       </Col>
 
-      <Col className="gutter-row" xs={6} sm={15} md={16} lg={16} xl={16} style={{ border: "2px solid #1890ff", borderRadius: "4px" }}>
+      <Col className="gutter-row" xs={6} sm={15} md={16} lg={16} xl={16}>
         <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
       </Col>
 
-      <Col className="gutter-row" xs={18} sm={9} md={8} lg={8} xl={6} style={{ border: "2px solid #1890ff", borderRadius: "4px" }}>
+      <Col className="gutter-row" xs={18} sm={9} md={8} lg={8} xl={6} style={{ display: 'flex', justifyContent: 'left', alignItems: 'center' }}>
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
       </Col>
     </Row>
