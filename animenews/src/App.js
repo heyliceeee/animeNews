@@ -1,30 +1,49 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import { ConfigProvider, theme, Row, Col } from 'antd';
+import { ConfigProvider, Row, Col } from "antd";
 
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
+import Home from "./content/home/Home";
+import About from "./content/about/About";
+import LatestNews from "./content/latestNews/LatestNews";
+import Interviews from "./content/interviews/Interviews";
 
-const style = {
-  background: '#0092ff',
-  padding: '8px 0',
-};
+import { useState } from "react";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const renderContent = () => {
+    switch (currentPage) {
+      case "home":
+        return <Home />;
+      case "about":
+        return <About />;
+      case "latestnews":
+        return <LatestNews />;
+      case "interviews":
+        return <Interviews />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
-    <ConfigProvider theme={{token: { colorPrimary: '#1668dc' } }}>
-      <Row gutter={{xs: 10, sm: 18, md: 26, lg: 34,}}>
-        <Col className="gutter-row" span={2}/>
+    <ConfigProvider theme={{ token: { colorPrimary: "#1668dc" } }}>
+      <Row gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}>
+        <Col className="gutter-row" span={2} />
 
         <Col className="gutter-row" span={20}>
-          <Header/>
-          {/* content */}
+          <Header setCurrentPage={setCurrentPage} />
 
-          <Footer/>
+          {renderContent()}
+
+          <Footer />
         </Col>
 
-        <Col className="gutter-row" span={2}/>
+        <Col className="gutter-row" span={2} />
       </Row>
     </ConfigProvider>
   );

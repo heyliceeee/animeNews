@@ -36,12 +36,13 @@ const items = [
   },
 ];
 
-function Header() {
+function Header({ setCurrentPage }) {
   const [current, setCurrent] = useState("home");
 
   const onClick = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
+    setCurrentPage(e.key);
   };
 
   return (
