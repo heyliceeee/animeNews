@@ -1,0 +1,5 @@
+@media (max-width: 1264px) {
+    .logo-column {
+      display: none !important;
+    }
+  }
