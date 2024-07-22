@@ -55,10 +55,10 @@ function Header({ setCurrentPage }) {
     <Row>
       <Col
         className="gutter-row logo-column"
-        xs={0}
-        sm={0}
-        md={0}
-        lg={0}
+        xs={2}
+        sm={2}
+        md={2}
+        lg={2}
         xl={2}
         style={{
           display: "flex",
@@ -70,22 +70,22 @@ function Header({ setCurrentPage }) {
         <Image src={logo} height="99%" />
       </Col>
 
-      <Col className="gutter-row" xs={6} sm={15} md={16} lg={16} xl={16}>
+      <Col className="gutter-row" xs={6} sm={10} md={16} lg={16} xl={16}>
         <Menu
           onClick={onClick}
           selectedKeys={[current]}
           mode="horizontal"
           items={items}
-          style={{ borderBottom: 'none'}}
+          style={{ borderBottom: "none" }}
         />
       </Col>
 
       <Col
         className="gutter-row"
-        xs={18}
-        sm={9}
-        md={8}
-        lg={8}
+        xs={16}
+        sm={12}
+        md={6}
+        lg={6}
         xl={6}
         style={{
           display: "flex",
@@ -96,7 +96,13 @@ function Header({ setCurrentPage }) {
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
       </Col>
 
-      <Divider style={{borderColor: '#1668dc', borderWidth: '4px'}}/>
+      <Divider
+        style={{
+          borderColor: "#1668dc",
+          borderWidth: "4px",
+          marginTop: "4px",
+        }}
+      />
     </Row>
   );
 }
