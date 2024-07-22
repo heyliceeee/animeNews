@@ -35,6 +35,12 @@ function Footer() {
 
           <div>
             <Link href="#" target="_blank">
+              Features
+            </Link>
+          </div>
+
+          <div>
+            <Link href="#" target="_blank">
               Interviews
             </Link>
           </div>

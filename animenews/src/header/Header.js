@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Menu, Input, Row, Col, Image } from "antd";
+import { Menu, Input, Row, Col, Image, Divider } from "antd";
 import {
   HomeOutlined,
   NotificationOutlined,
   AudioOutlined,
   InfoCircleOutlined,
+  TagOutlined,
 } from "@ant-design/icons";
 
 import logo from "../images/logo.jfif";
@@ -23,6 +24,11 @@ const items = [
     label: "Latest News",
     key: "latestnews",
     icon: <NotificationOutlined />,
+  },
+  {
+    label: "Features",
+    key: "features",
+    icon: <TagOutlined />,
   },
   {
     label: "Interviews",
@@ -88,6 +94,8 @@ function Header({ setCurrentPage }) {
       >
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
       </Col>
+
+      <Divider style={{borderColor: '#1668dc', borderWidth: '5px'}}/>
     </Row>
   );
 }
