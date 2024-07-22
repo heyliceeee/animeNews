@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { ConfigProvider, Row, Col } from "antd";
+import { ConfigProvider, Row, Col, theme } from "antd";
 
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
@@ -39,7 +39,12 @@ function App() {
   };
 
   return (
-    <ConfigProvider theme={{ token: { colorPrimary: "#1668dc" } }}>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.lightAlgorithm,
+        token: { colorPrimary: "#1668dc" },
+      }}
+    >
       <Row gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}>
         <Col className="gutter-row" span={2} />
 

@@ -76,6 +76,7 @@ function Header({ setCurrentPage }) {
           selectedKeys={[current]}
           mode="horizontal"
           items={items}
+          style={{ borderBottom: 'none'}}
         />
       </Col>
 
@@ -95,7 +96,7 @@ function Header({ setCurrentPage }) {
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
       </Col>
 
-      <Divider style={{borderColor: '#1668dc', borderWidth: '5px'}}/>
+      <Divider style={{borderColor: '#1668dc', borderWidth: '4px'}}/>
     </Row>
   );
 }
