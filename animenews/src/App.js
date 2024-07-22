@@ -9,6 +9,7 @@ import Home from "./content/home/Home";
 import About from "./content/about/About";
 import LatestNews from "./content/latestNews/LatestNews";
 import Interviews from "./content/interviews/Interviews";
+import Features from "./content/features/Features";
 
 import { useState } from "react";
 
@@ -19,12 +20,19 @@ function App() {
     switch (currentPage) {
       case "home":
         return <Home />;
+
       case "about":
         return <About />;
+
       case "latestnews":
         return <LatestNews />;
+
       case "interviews":
         return <Interviews />;
+
+      case "features":
+        return <Features />;
+
       default:
         return <Home />;
     }
