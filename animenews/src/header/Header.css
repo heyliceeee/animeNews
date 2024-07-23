@@ -1,5 +1,67 @@
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+:where(.css-dev-only-do-not-override-jzo6s3).ant-menu-light .ant-menu-item:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected):hover{
+  color: red;
+}
+
+
+body.dark-mode .ant-menu {
+  background-color: #121212;
+}
+
+body.dark-mode .ant-menu-item,
+body.dark-mode .ant-menu-item a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .ant-menu-item:hover,
+body.dark-mode .ant-menu-item a:hover {
+  color: blue;
+}
+
+body.dark-mode .ant-menu-item:hover,
+body.dark-mode .ant-menu-item-active,
+body.dark-mode .ant-menu-item-selected,
+body.dark-mode li:hover {
+  background-color: #ffff;
+}
+
+body.dark-mode .ant-input,
+body.dark-mode .ant-input-search {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ant-input::placeholder {
+  color: #888;
+}
+
+body.dark-mode .ant-btn {
+  background-color: #1668dc;
+  color: #e0e0e0;
+}
+
+body.dark-mode .ant-btn:hover,
+h4
+body.dark-mode .ant-btn:focus {
+  color: #e0e0e0;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode svg {
+  color: #fff
+}
+
+body.dark-mode button{
+  color:blue
+}
+
+
+
 @media (max-width: 1264px) {
-    .logo-column {
-      display: none !important;
-    }
+  .logo-column {
+    display: none !important;
   }
+}

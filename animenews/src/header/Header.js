@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Menu, Input, Row, Col, Image, Divider } from "antd";
+import { Menu, Input, Row, Col, Image, Divider, Button, Dropdown} from "antd";
 import {
   HomeOutlined,
   NotificationOutlined,
   AudioOutlined,
   InfoCircleOutlined,
   TagOutlined,
+  UserOutlined
 } from "@ant-design/icons";
+import { BulbOutlined, BulbFilled } from "@ant-design/icons";
 
 import logo from "../images/logo.jfif";
 
@@ -42,13 +44,30 @@ const items = [
   },
 ];
 
+const menu = (
+  <Menu>
+    <Menu.Item key="option1">
+      Login
+    </Menu.Item>
+    <Menu.Item key="option2">
+      Register
+    </Menu.Item>
+  </Menu>
+);
+
 function Header({ setCurrentPage }) {
   const [current, setCurrent] = useState("home");
+  const [darkMode, setDarkMode] = useState(false);
 
   const onClick = (e) => {
     console.log("click ", e);
     setCurrent(e.key);
     setCurrentPage(e.key);
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle('dark-mode', !darkMode);
   };
 
   return (
@@ -81,7 +100,7 @@ function Header({ setCurrentPage }) {
 
       <Col
         className="gutter-row"
-        xs={18}
+        xs={12}
         sm={9}
         md={8}
         lg={8}
@@ -92,7 +111,20 @@ function Header({ setCurrentPage }) {
           alignItems: "center",
         }}
       >
+
+        
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
+        <Button 
+          type="text" 
+          onClick={toggleDarkMode} 
+          icon={darkMode ? <BulbFilled /> : <BulbOutlined />}
+          style={{ marginLeft: '10px' }}
+        />
+         
+         <Dropdown overlay={menu}>
+          <UserOutlined style={{ fontSize: '15px', marginLeft: '10px', cursor: 'pointer' }} />
+        </Dropdown>
+
       </Col>
 
       <Divider style={{borderColor: '#1668dc', borderWidth: '5px'}}/>
