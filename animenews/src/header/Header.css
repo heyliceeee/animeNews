@@ -1,8 +1,4 @@
-@media (max-width: 700px) {
-    .logo-column {
-      display: none !important;
-    }
-  }
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -65,7 +61,7 @@ body.dark-mode button{
 
 
 
-@media (max-width: 1264px) {
+@media (max-width: 700px) {
   .logo-column {
     display: none !important;
   }

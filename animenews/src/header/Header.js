@@ -89,7 +89,7 @@ function Header({ setCurrentPage }) {
         <Image src={logo} height="99%" />
       </Col>
 
-      <Col className="gutter-row" xs={6} sm={10} md={16} lg={16} xl={16}>
+      <Col className="gutter-row" xs={6} sm={10} md={14} lg={16} xl={16}>
         <Menu
           onClick={onClick}
           selectedKeys={[current]}
@@ -103,7 +103,7 @@ function Header({ setCurrentPage }) {
         className="gutter-row"
         xs={16}
         sm={12}
-        md={6}
+        md={8}
         lg={6}
         xl={6}
         style={{
