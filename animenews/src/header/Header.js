@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Menu, Input, Row, Col, Image, Divider, Button, Dropdown} from "antd";
+import { Menu, Input, Row, Col, Image, Divider, Button, Dropdown } from "antd";
 import {
   HomeOutlined,
   NotificationOutlined,
   AudioOutlined,
   InfoCircleOutlined,
   TagOutlined,
-  UserOutlined
+  UserOutlined,
 } from "@ant-design/icons";
 import { BulbOutlined, BulbFilled } from "@ant-design/icons";
 
@@ -46,12 +46,8 @@ const items = [
 
 const menu = (
   <Menu>
-    <Menu.Item key="option1">
-      Login
-    </Menu.Item>
-    <Menu.Item key="option2">
-      Register
-    </Menu.Item>
+    <Menu.Item key="option1">Login</Menu.Item>
+    <Menu.Item key="option2">Register</Menu.Item>
   </Menu>
 );
 
@@ -67,7 +63,7 @@ function Header({ setCurrentPage }) {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
+    document.body.classList.toggle("dark-mode", !darkMode);
   };
 
   return (
@@ -86,7 +82,7 @@ function Header({ setCurrentPage }) {
           height: "60px",
         }}
       >
-        <Image src={logo} height="99%" />
+        <Image src={logo} height="99%" preview={false} />
       </Col>
 
       <Col className="gutter-row" xs={6} sm={10} md={14} lg={16} xl={16}>
@@ -112,20 +108,19 @@ function Header({ setCurrentPage }) {
           alignItems: "center",
         }}
       >
-
-        
         <Search placeholder="Search..." onSearch={onSearch} enterButton />
-        <Button 
-          type="text" 
-          onClick={toggleDarkMode} 
+        <Button
+          type="text"
+          onClick={toggleDarkMode}
           icon={darkMode ? <BulbFilled /> : <BulbOutlined />}
-          style={{ marginLeft: '10px' }}
+          style={{ marginLeft: "10px" }}
         />
-         
-         <Dropdown overlay={menu}>
-          <UserOutlined style={{ fontSize: '15px', marginLeft: '10px', cursor: 'pointer' }} />
-        </Dropdown>
 
+        <Dropdown overlay={menu}>
+          <UserOutlined
+            style={{ fontSize: "15px", marginLeft: "10px", cursor: "pointer" }}
+          />
+        </Dropdown>
       </Col>
 
       <Divider
