@@ -19,14 +19,10 @@ function NewsCard({ image, tags, date, title, subtitle, content, author }) {
 
       <Row
         style={{
-          marginBottom: "10px",
+          marginBottom: "-20px",
         }}
       >
-        <Col
-          style={{
-            backgroundColor: "#fff",
-          }}
-        >
+        <Col>
           <Row>
             {tags.split(";").map((tag, index) => (
               <div
@@ -49,7 +45,7 @@ function NewsCard({ image, tags, date, title, subtitle, content, author }) {
       </Row>
 
       <Row style={{ marginBottom: "-20px" }}>
-        <Text>{date}</Text>
+        <Title level={5}>{date}</Title>
       </Row>
 
       <Row style={{ marginBottom: "0px" }}>
