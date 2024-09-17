@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Typography, Divider } from "antd";
 import NewsCard from "../../components/newsCard/newsCard";
+import CarouselNewsCard from "../../components/carouselNewsCard/carouselNewsCard";
 
 const { Title, Link } = Typography;
 
@@ -78,6 +79,8 @@ function Home() {
               marginTop: "4px",
             }}
           />
+
+          <CarouselNewsCard />
         </Col>
 
         <Col

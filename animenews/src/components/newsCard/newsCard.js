@@ -11,9 +11,23 @@ function NewsCard({ image, tags, date, title, subtitle, content, author }) {
           style={{
             backgroundColor: "#fff",
             marginBottom: "10px",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Image src={image} width="100%" style={{ borderRadius: "3px" }} />
+          <Image
+            src={image}
+            style={{
+              borderRadius: "3px",
+              objectFit: "cover",
+              width: "100%",
+              height: "100%",
+            }}
+            preview={false}
+          />
         </Col>
       </Row>
 
