@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { ConfigProvider, Row, Col, theme } from "antd";
+import { ConfigProvider, Row, Col } from "antd";
 
 import Header from "./header/Header";
 import Footer from "./footer/Footer";

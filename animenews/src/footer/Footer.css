@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--dark-20);
+}
+
+.txtCopyright {
+  color: var(--grey);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-body-medium);
+}
