@@ -1,0 +1,65 @@
+/* Importar a fonte do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&display=swap");
+
+:root {
+  /* Brand Colours */
+  --brand-color-blue-gradient: linear-gradient(
+    223.75deg,
+    #00a3ff 4.8%,
+    #0054c6 95.02%
+  );
+
+  --selected-blue-gradient: linear-gradient(
+    87deg,
+    #050b0a 0%,
+    #0057ca 5%,
+    #1456aa 47%,
+    #000925 48%
+  );
+
+  /* Dark Scale */
+  --dark-10: rgba(6, 9, 15, 1);
+  --dark-20: rgba(9, 14, 24, 1);
+  --dark-30: rgba(21, 27, 38, 1);
+  --dark-40: rgba(163, 163, 163, 1);
+
+  /* Color System */
+  --support-01: rgba(41, 98, 255, 1);
+  --support-02: rgba(11, 176, 123, 1);
+  --support-03: rgba(255, 206, 82, 1);
+  --support-04: rgba(240, 61, 61, 1);
+  --support-05: rgba(224, 224, 224, 1);
+
+  /* Another Colors */
+  --white: rgba(254, 251, 251, 1);
+  --grey: rgba(163, 163, 163, 1);
+  --gray-gradient: linear-gradient(
+    180deg,
+    rgba(6, 9, 15, 0.3) 53.65%,
+    #06090f 100%
+  );
+  --blue-primary: #0054c6;
+
+  /* Typography */
+  --font-family-archivo: "Archivo", sans-serif;
+  --font-weight-regular: 400; /* Regular */
+  --font-weight-medium: 500; /* Medium */
+
+  /* Font Size */
+  --font-size-h1: 48px;
+  --font-size-h2: 40px;
+  --font-size-h3: 24px;
+  --font-size-p: 24px;
+  --font-size-body-large: 20px;
+  --font-size-body-medium: 18px;
+  --font-size-body-normal: 16px;
+
+  /* Line Height */
+  --line-height-h1: 110%;
+  --line-height-h2: 110%;
+  --line-height-h3: 120%;
+  --line-height-p: 170%;
+  --line-height-body-large: 160%;
+  --line-height-body-medium: 160%;
+  --line-height-body-normal: 160%;
+}

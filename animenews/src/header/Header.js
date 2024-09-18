@@ -1,78 +1,72 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Menu, Input, Row, Col, Image, Divider, Button, Dropdown } from "antd";
+
+import { Menu, Row, Col, Image, Divider, Button, Grid, Dropdown } from "antd";
 import {
   HomeOutlined,
   NotificationOutlined,
   AudioOutlined,
-  InfoCircleOutlined,
   TagOutlined,
-  UserOutlined,
+  MoreOutlined,
 } from "@ant-design/icons";
-import { BulbOutlined, BulbFilled } from "@ant-design/icons";
+import logo from "../images/logo.png";
 
-import logo from "../images/logo.jfif";
+const { useBreakpoint } = Grid;
 
-const { Search } = Input;
-const onSearch = (value, _e, info) => console.log(info?.source, value);
-
-const items = [
-  {
-    label: "Home",
-    key: "home",
-    icon: <HomeOutlined />,
-  },
-  {
-    label: "Latest News",
-    key: "latestnews",
-    icon: <NotificationOutlined />,
-  },
-  {
-    label: "Features",
-    key: "features",
-    icon: <TagOutlined />,
-  },
-  {
-    label: "Interviews",
-    key: "interviews",
-    icon: <AudioOutlined />,
-  },
-  {
-    label: "About",
-    key: "about",
-    icon: <InfoCircleOutlined />,
-  },
-];
-
-const menu = (
-  <Menu>
-    <Menu.Item key="option1">Login</Menu.Item>
-    <Menu.Item key="option2">Register</Menu.Item>
-  </Menu>
-);
-
-function Header({ setCurrentPage }) {
+const Header = ({ setCurrentPage }) => {
   const [current, setCurrent] = useState("home");
-  const [darkMode, setDarkMode] = useState(false);
+  const screens = useBreakpoint();
 
   const onClick = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
     setCurrentPage(e.key);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode", !darkMode);
+  // Itens do menu principal
+  const mainItems = [
+    { label: "Home", key: "home", icon: <HomeOutlined /> },
+    { label: "Latest News", key: "latestnews", icon: <NotificationOutlined /> },
+    { label: "Features", key: "features", icon: <TagOutlined /> },
+    { label: "Interviews", key: "interviews", icon: <AudioOutlined /> },
+  ];
+
+  // Define quais itens exibir diretamente na barra principal e quais vão para o dropdown
+  const getVisibleMenuItems = () => {
+    if (screens.xl) {
+      // >= 1200 px
+      return mainItems;
+    } else if (screens.lg) {
+      // >= 992 px
+      return mainItems;
+    } else if (screens.md) {
+      // >= 768 px
+      return mainItems.slice(0, 3); // Exibe 3 itens no md
+    } else if (screens.sm) {
+      // >= 576 px
+      return mainItems.slice(0, 2); // Exibe 2 itens no sm
+    } else {
+      return []; // Exibe 0 itens no xs
+    }
   };
+
+  const getDropdownItems = () => {
+    const visibleItemsCount = getVisibleMenuItems().length;
+    return mainItems.slice(visibleItemsCount).map((item) => ({
+      label: item.label,
+      key: item.key,
+      icon: item.icon,
+    }));
+  };
+
+  const dropdownMenu = <Menu onClick={onClick} items={getDropdownItems()} />;
 
   return (
     <Row>
       <Col
         className="gutter-row logo-column"
-        xs={2}
-        sm={2}
-        md={2}
+        xs={6}
+        sm={3}
+        md={3}
         lg={2}
         xl={2}
         style={{
@@ -85,53 +79,63 @@ function Header({ setCurrentPage }) {
         <Image src={logo} height="99%" preview={false} />
       </Col>
 
-      <Col className="gutter-row" xs={6} sm={10} md={14} lg={16} xl={16}>
+      <Col
+        className="gutter-row"
+        xs={8}
+        sm={15}
+        md={16}
+        lg={18}
+        xl={19}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end", // Alinha o Menu à direita
+        }}
+      >
         <Menu
           onClick={onClick}
           selectedKeys={[current]}
           mode="horizontal"
-          items={items}
-          style={{ borderBottom: "none" }}
+          items={getVisibleMenuItems()}
+          style={{
+            borderBottom: "none",
+            flexGrow: "1",
+            justifyContent: "flex-end",
+          }} // Alinha os itens do menu à direita
+          overflowedIndicator={null} // Evita o overflow automático
         />
+        {getDropdownItems().length > 0 && (
+          <Dropdown overlay={dropdownMenu}>
+            <Button className="btnMoreItems" icon={<MoreOutlined />} />
+          </Dropdown>
+        )}
       </Col>
 
       <Col
         className="gutter-row"
-        xs={16}
-        sm={12}
-        md={8}
-        lg={6}
-        xl={6}
+        xs={10}
+        sm={6}
+        md={5}
+        lg={4}
+        xl={3}
         style={{
           display: "flex",
-          justifyContent: "left",
+          justifyContent: "right",
           alignItems: "center",
         }}
       >
-        <Search placeholder="Search..." onSearch={onSearch} enterButton />
-        <Button
-          type="text"
-          onClick={toggleDarkMode}
-          icon={darkMode ? <BulbFilled /> : <BulbOutlined />}
-          style={{ marginLeft: "10px" }}
-        />
-
-        <Dropdown overlay={menu}>
-          <UserOutlined
-            style={{ fontSize: "15px", marginLeft: "10px", cursor: "pointer" }}
-          />
-        </Dropdown>
+        <Button className="btnMyaccount" style={{ cursor: "pointer" }}>
+          My account
+        </Button>
       </Col>
 
       <Divider
         style={{
-          borderColor: "#1668dc",
-          borderWidth: "4px",
           marginTop: "4px",
         }}
       />
     </Row>
   );
-}
+};
 
 export default Header;

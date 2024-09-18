@@ -39,13 +39,8 @@ function App() {
   };
 
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: theme.lightAlgorithm,
-        token: { colorPrimary: "#1668dc" },
-      }}
-    >
-      <Row gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}>
+    <ConfigProvider>
+      <Row gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }} className="website">
         <Col className="gutter-row" span={2} />
 
         <Col className="gutter-row" span={20}>

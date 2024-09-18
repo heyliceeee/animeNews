@@ -1,3 +1,9 @@
+@import "./variables.css";
+
+.website {
+  background-color: var(--dark-10);
+}
+
 .App {
   text-align: center;
 }
