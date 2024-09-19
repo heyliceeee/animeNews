@@ -3,7 +3,7 @@ import "./Footer.css";
 
 import { Row, Col, Typography } from "antd";
 
-const { Text, Title, Link } = Typography;
+const { Text, Link } = Typography;
 
 function Footer() {
   return (

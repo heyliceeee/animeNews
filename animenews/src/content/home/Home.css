@@ -1,0 +1,15 @@
+.anime-news {
+  color: var(--white);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-animenews);
+  line-height: var(--line-height-animenews);
+}
+
+.subtitle {
+    color: var(--grey);
+    font-family: var(--font-family-archivo);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-subtitle);
+    line-height: var(--line-height-subtitle);
+  }

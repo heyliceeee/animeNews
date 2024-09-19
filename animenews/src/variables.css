@@ -42,8 +42,10 @@
   --font-weight-bold: 600; /* Bold */
 
   /* Font Size */
+  --font-size-animenews: 56px;
   --font-size-h1: 48px;
   --font-size-h2: 40px;
+  --font-size-subtitle: 32px;
   --font-size-h3: 24px;
   --font-size-p: 24px;
   --font-size-body-large: 20px;
@@ -51,6 +53,8 @@
   --font-size-body-normal: 16px;
 
   /* Line Height */
+  --line-height-animenews: 67.2px;
+  --line-height-animenews: 51.2px;
   --line-height-h1: 110%;
   --line-height-h2: 110%;
   --line-height-h3: 120%;
