@@ -45,14 +45,12 @@ function App() {
 
         <Col className="gutter-row" span={20}>
           <Header setCurrentPage={setCurrentPage} />
-
           {renderContent()}
-
-          <Footer />
         </Col>
 
         <Col className="gutter-row" span={2} />
       </Row>
+      <Footer />
     </ConfigProvider>
   );
 }

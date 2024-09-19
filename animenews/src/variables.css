@@ -9,13 +9,7 @@
     #0054c6 95.02%
   );
 
-  --selected-blue-gradient: linear-gradient(
-    87deg,
-    #050b0a 0%,
-    #0057ca 5%,
-    #1456aa 47%,
-    #000925 48%
-  );
+  --selected-blue-gradient: linear-gradient(90deg, #0054c6, #008aed);
 
   /* Dark Scale */
   --dark-10: rgba(6, 9, 15, 1);
@@ -42,8 +36,10 @@
 
   /* Typography */
   --font-family-archivo: "Archivo", sans-serif;
+  --font-weight-light: 300; /* Light */
   --font-weight-regular: 400; /* Regular */
   --font-weight-medium: 500; /* Medium */
+  --font-weight-bold: 600; /* Bold */
 
   /* Font Size */
   --font-size-h1: 48px;
