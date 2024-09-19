@@ -1,4 +1,11 @@
 /* MENU */
+.menu {
+  font-family: var(--font-family-archivo) !important;
+  font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-body-medium) !important;
+  line-height: var(--line-height-body-medium) !important;
+}
+
 .ant-menu {
   background-color: var(--dark-10) !important;
 }
@@ -15,7 +22,7 @@
   .ant-menu-item:not(.ant-menu-item-selected):not(
     .ant-menu-submenu-selected
   ):hover {
-  color: var(--brand-color-blue-gradient);
+  color: var(--brand-color-blue-gradient) !important;
 }
 
 /* DROPDOWN */
@@ -25,26 +32,44 @@
   border-color: var(--dark-10) !important;
 }
 
-.ant-dropdown-menu {
+.ant-dropdown .ant-dropdown-menu {
   background-color: var(--dark-10) !important;
+
+  font-family: var(--font-family-archivo) !important;
+  font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-body-medium) !important;
+  line-height: var(--line-height-body-medium) !important;
 }
 
-.ant-dropdown-menu-item {
+.ant-dropdown .ant-dropdown-menu-item {
   color: var(--white) !important;
+
+  font-family: var(--font-family-archivo) !important;
+  font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-body-medium) !important;
+  line-height: var(--line-height-body-medium) !important;
+}
+
+.ant-dropdown .ant-dropdown-menu-item:hover {
+  background-image: var(--brand-color-blue-gradient) !important;
 }
 
 /* BUTTON MY ACCOUNT */
 .btnMyaccount {
+  font-family: var(--font-family-archivo) !important;
+  font-weight: var(--font-weight-regular) !important;
+  font-size: var(--font-size-body-medium) !important;
+  line-height: var(--line-height-body-medium) !important;
+
   background-image: var(--brand-color-blue-gradient) !important;
   color: var(--white) !important;
   border-color: var(--blue-primary) !important;
 }
 
 .btnMyaccount:hover {
-  background-image: var(--selected-blue-gradient);
+  background-image: var(--selected-blue-gradient) !important;
   color: var(--white) !important;
 }
-
 
 /* DIVIDER */
 .ant-divider {

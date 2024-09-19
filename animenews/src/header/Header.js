@@ -58,7 +58,9 @@ const Header = ({ setCurrentPage }) => {
     }));
   };
 
-  const dropdownMenu = <Menu onClick={onClick} items={getDropdownItems()} />;
+  const dropdownMenu = (
+    <Menu className="menu" onClick={onClick} items={getDropdownItems()} />
+  );
 
   return (
     <Row>
@@ -93,6 +95,7 @@ const Header = ({ setCurrentPage }) => {
         }}
       >
         <Menu
+          className="menu"
           onClick={onClick}
           selectedKeys={[current]}
           mode="horizontal"
@@ -105,7 +108,9 @@ const Header = ({ setCurrentPage }) => {
           overflowedIndicator={null} // Evita o overflow automático
         />
         {getDropdownItems().length > 0 && (
-          <Dropdown overlay={dropdownMenu}>
+          <Dropdown
+            menu={{ items: getDropdownItems(), onClick }}
+          >
             <Button className="btnMoreItems" icon={<MoreOutlined />} />
           </Dropdown>
         )}
