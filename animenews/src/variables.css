@@ -51,10 +51,13 @@
   --font-size-body-large: 20px;
   --font-size-body-medium: 18px;
   --font-size-body-normal: 16px;
+  --font-size-body-small: 10px;
 
   /* Line Height */
-  --line-height-animenews: 67.2px;
-  --line-height-animenews: 51.2px;
+  --line-height-animeradar: 67.2px;
+  --line-height-subtitle: 51.2px;
+  --line-height-description: 38.4px;
+  --line-height-tag: 25.2px;
   --line-height-h1: 110%;
   --line-height-h2: 110%;
   --line-height-h3: 120%;

@@ -1,11 +1,73 @@
-import React from "react";
-import { Card, Row, Col, Typography, Divider, Tag } from "antd";
+import React, { useEffect, useState } from "react";
+import { Row, Col, Typography, Grid, Tag } from "antd";
 import "./Home.css";
 
-const { Meta } = Card;
 const { Text } = Typography;
+const { useBreakpoint } = Grid;
 
 function Home() {
+  const screens = useBreakpoint(); // Get the current screen sizesF
+  const [title, setTitle] = useState(
+    "Visions of Mana Trailer Introduces Elemental Vessels"
+  );
+  const [subtitle, setSubtitle] = useState(
+    "Next entry in the series hits consoles and PC on August 29"
+  );
+  const [maxTitleLength, setMaxTitleLength] = useState(0);
+  const [maxSubtitleLength, setMaxSubtitleLength] = useState(0);
+  const [titleClass, setTitleClass] = useState("title-xl");
+  const [subtitleClass, setSubtitleClass] = useState("subtitle-xl");
+  const [tagClass, setTagClass] = useState("tag-news-xl");
+
+  // Função que aplica truncamento ao título e subtítulo
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
+
+  useEffect(() => {
+    // Update max lengths based on the screen size
+    if (screens.xxl) {
+      setMaxTitleLength(23);
+      setMaxSubtitleLength(48);
+      setTitleClass("title-xxl");
+      setSubtitleClass("subtitle-xxl");
+      setTagClass("tag-news-xxl");
+    } else if (screens.xl) {
+      setMaxTitleLength(17);
+      setMaxSubtitleLength(35);
+      setTitleClass("title-xl");
+      setSubtitleClass("subtitle-xl");
+      setTagClass("tag-news-xl");
+    } else if (screens.lg) {
+      setMaxTitleLength(13);
+      setMaxSubtitleLength(29);
+      setTitleClass("title-lg");
+      setSubtitleClass("subtitle-lg");
+      setTagClass("tag-news-lg");
+    } else if (screens.md) {
+      setMaxTitleLength(10);
+      setMaxSubtitleLength(21);
+      setTitleClass("title-md");
+      setSubtitleClass("subtitle-md");
+      setTagClass("tag-news-md");
+    } else if (screens.sm) {
+      setMaxTitleLength(7);
+      setMaxSubtitleLength(15);
+      setTitleClass("title-sm");
+      setSubtitleClass("subtitle-sm");
+      setTagClass("tag-news-sm");
+    } else if (screens.xs) {
+      setMaxTitleLength(17);
+      setMaxSubtitleLength(19);
+      setTitleClass("title-xs");
+      setSubtitleClass("subtitle-xs");
+      setTagClass("tag-news-xs");
+    }
+  }, [screens]);
+
   return (
     <div style={{ marginTop: "100px" }}>
       <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
@@ -27,48 +89,29 @@ function Home() {
           xl={12}
           style={{ border: "1px solid #774" }}
         >
-          <Card
-            hoverable
-            style={{
-              backgroundColor: "#000000",
-              color: "#fff",
-              marginBottom: "-50px",
-            }}
-            cover={
-              <img
-                alt="series"
-                src="https://a.storyblok.com/f/178900/960x537/b14fcaf531/visions-of-mana-elemental-vessels.jpg/m/filters:quality(95)format(webp)" // Substitua pela imagem correta
-                style={{ opacity: 0.8 }}
-              />
-            }
-          >
-            <Tag
-              color="blue"
-              style={{ position: "absolute", marginTop: "-130px" }}
-            >
-              News
-            </Tag>
-            <Tag
-              color="blue"
-              style={{
-                position: "absolute",
-                marginTop: "-130px",
-                marginLeft: "50px",
-              }}
-            >
-              Games
-            </Tag>
-            <Meta
-              title="Visions of Mana Trailer Introduces Elemental Vessels"
-              description="Next entry in the series hits consoles and PC on August 29"
-              style={{
-                position: "absolute",
-                color: "#fff",
-                marginTop: "-100px",
-                marginBottom: "0px",
-              }}
+          <div className="image-container">
+            <img
+              src="https://a.storyblok.com/f/178900/960x537/b14fcaf531/visions-of-mana-elemental-vessels.jpg/m/filters:quality(95)format(webp)"
+              alt="example"
+              className="image"
             />
-          </Card>
+            <div className="overlay">
+              <div className="tags">
+                <Tag className={tagClass} color="white">
+                  NEWS
+                </Tag>
+                <Tag className={tagClass} color="white">
+                  GAMES
+                </Tag>
+              </div>
+              <Text className={titleClass}>
+                {truncateText(title, maxTitleLength)}
+              </Text>
+              <Text className={subtitleClass}>
+                {truncateText(subtitle, maxSubtitleLength)}
+              </Text>
+            </div>
+          </div>
         </Col>
         <Col
           xs={12}
@@ -79,6 +122,8 @@ function Home() {
           style={{ border: "1px solid #774" }}
         ></Col>
       </Row>
+
+      <Row style={{ height: "100px" }}></Row>
     </div>
   );
 }

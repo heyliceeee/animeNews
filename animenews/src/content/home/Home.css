@@ -3,13 +3,124 @@
   font-family: var(--font-family-archivo);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-animenews);
-  line-height: var(--line-height-animenews);
+  line-height: var(--line-height-animeradar);
 }
 
 .subtitle {
-    color: var(--grey);
-    font-family: var(--font-family-archivo);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-subtitle);
-    line-height: var(--line-height-subtitle);
-  }
+  color: var(--grey);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-subtitle);
+  line-height: var(--line-height-subtitle);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: left;
+}
+
+.title-xxl,
+.title-xl,
+.title-lg,
+.title-md,
+.title-sm {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-subtitle);
+  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+}
+
+.title-xs {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  margin-top: -20px;
+  color: var(--white);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-subtitle);
+  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+}
+
+.subtitle-xxl,
+.subtitle-xl,
+.subtitle-lg,
+.subtitle-md,
+.subtitle-sm {
+  margin-left: 10px;
+  color: var(--grey);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-description);
+  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+}
+
+.subtitle-xs {
+  margin-left: 10px;
+  color: var(--grey);
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-h1);
+  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
+  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+}
+
+.tags {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.tag-news-xxl,
+.tag-news-xl,
+.tag-news-lg,
+.tag-news-md,
+.tag-news-sm {
+  background-image: var(--brand-color-blue-gradient) !important;
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body-medium);
+  line-height: var(--line-height-tag);
+}
+
+.tag-news-xs {
+  background-image: var(--brand-color-blue-gradient) !important;
+  font-family: var(--font-family-archivo);
+  font-weight: var(--font-weight-light);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-h1);
+}
