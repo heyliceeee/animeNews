@@ -7,12 +7,8 @@ const { useBreakpoint } = Grid;
 
 function Home() {
   const screens = useBreakpoint(); // Get the current screen sizesF
-  const [title, setTitle] = useState(
-    "Visions of Mana Trailer Introduces Elemental Vessels"
-  );
-  const [subtitle, setSubtitle] = useState(
-    "Next entry in the series hits consoles and PC on August 29"
-  );
+  const [title, setTitle] = useState("title");
+  const [subtitle, setSubtitle] = useState("subtitle");
   const [maxTitleLength, setMaxTitleLength] = useState(0);
   const [maxSubtitleLength, setMaxSubtitleLength] = useState(0);
   const [titleClass, setTitleClass] = useState("title-xl");
@@ -87,8 +83,80 @@ function Home() {
           md={12}
           lg={12}
           xl={12}
-          style={{ border: "1px solid #774" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
         >
+          <div className="image-container" style={{ flexGrow: 1, display: "flex" }}>
+            <img
+              src="https://a.storyblok.com/f/178900/960x537/b14fcaf531/visions-of-mana-elemental-vessels.jpg/m/filters:quality(95)format(webp)"
+              alt="example"
+              className="image"
+            />
+            <div className="overlay">
+              <div className="tags">
+                <Tag className={tagClass} color="white">
+                  NEWS
+                </Tag>
+                <Tag className={tagClass} color="white">
+                  GAMES
+                </Tag>
+              </div>
+              <Text className={titleClass}>
+                {truncateText(
+                  "Visions of Mana Trailer Introduces Elemental Vessels",
+                  maxTitleLength
+                )}
+              </Text>
+              <Text className={subtitleClass}>
+                {truncateText(
+                  "Next entry in the series hits consoles and PC on August 29",
+                  maxSubtitleLength
+                )}
+              </Text>
+            </div>
+          </div>
+        </Col>
+
+        <Col
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+        >
+          <div className="image-container" style={{ marginBottom: "3%" }}>
+            <img
+              src="https://a.storyblok.com/f/178900/960x540/31eea450b4/cr_atri_hero.png/m/576x0/filters:quality(95)format(webp)"
+              alt="example"
+              className="image"
+            />
+            <div className="overlay">
+              <div className="tags">
+                <Tag className={tagClass} color="white">
+                  NEWS
+                </Tag>
+                <Tag className={tagClass} color="white">
+                  GAMES
+                </Tag>
+              </div>
+              <Text className={titleClass}>
+                {truncateText(
+                  "ATRI - My Dear Moments - Anime Shares Creditless Ending Video",
+                  maxTitleLength
+                )}
+              </Text>
+              <Text className={subtitleClass}>
+                {truncateText(
+                  "The visual novel adaptation is now streaming on Crunchyroll",
+                  maxSubtitleLength
+                )}
+              </Text>
+            </div>
+          </div>
+
           <div className="image-container">
             <img
               src="https://a.storyblok.com/f/178900/960x537/b14fcaf531/visions-of-mana-elemental-vessels.jpg/m/filters:quality(95)format(webp)"
@@ -105,22 +173,20 @@ function Home() {
                 </Tag>
               </div>
               <Text className={titleClass}>
-                {truncateText(title, maxTitleLength)}
+                {truncateText(
+                  "Visions of Mana Trailer Introduces Elemental Vessels",
+                  maxTitleLength
+                )}
               </Text>
               <Text className={subtitleClass}>
-                {truncateText(subtitle, maxSubtitleLength)}
+                {truncateText(
+                  "Next entry in the series hits consoles and PC on August 29",
+                  maxSubtitleLength
+                )}
               </Text>
             </div>
           </div>
         </Col>
-        <Col
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          style={{ border: "1px solid #774" }}
-        ></Col>
       </Row>
 
       <Row style={{ height: "100px" }}></Row>

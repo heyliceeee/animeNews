@@ -16,14 +16,15 @@
 
 .image-container {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  width: 97%;
+  max-width: 97%;
 }
 
 .image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .overlay {
@@ -53,23 +54,29 @@
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-h1);
   line-height: var(--line-height-subtitle);
-  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
-  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
-  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+  white-space: nowrap;
+  /* Força o texto a permanecer em uma única linha */
+  overflow: hidden;
+  /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis;
+  /* Adiciona os três pontos (...) no final do texto */
 }
 
 .title-xs {
   margin-left: 10px;
-  margin-bottom: 0px;
+  margin-bottom: -10px;
   margin-top: -20px;
   color: var(--white);
   font-family: var(--font-family-archivo);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-small);
   line-height: var(--line-height-subtitle);
-  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
-  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
-  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+  white-space: nowrap;
+  /* Força o texto a permanecer em uma única linha */
+  overflow: hidden;
+  /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis;
+  /* Adiciona os três pontos (...) no final do texto */
 }
 
 .subtitle-xxl,
@@ -83,21 +90,28 @@
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-h3);
   line-height: var(--line-height-description);
-  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
-  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
-  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+  white-space: nowrap;
+  /* Força o texto a permanecer em uma única linha */
+  overflow: hidden;
+  /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis;
+  /* Adiciona os três pontos (...) no final do texto */
 }
 
 .subtitle-xs {
   margin-left: 10px;
+  margin-bottom: 5px;
   color: var(--grey);
   font-family: var(--font-family-archivo);
   font-weight: var(--font-weight-light);
   font-size: var(--font-size-body-small);
   line-height: var(--line-height-h1);
-  white-space: nowrap; /* Força o texto a permanecer em uma única linha */
-  overflow: hidden; /* Oculta o conteúdo que ultrapassa o limite da linha */
-  text-overflow: ellipsis; /* Adiciona os três pontos (...) no final do texto */
+  white-space: nowrap;
+  /* Força o texto a permanecer em uma única linha */
+  overflow: hidden;
+  /* Oculta o conteúdo que ultrapassa o limite da linha */
+  text-overflow: ellipsis;
+  /* Adiciona os três pontos (...) no final do texto */
 }
 
 .tags {
